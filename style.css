@@ -11,10 +11,6 @@ header{
     border-top: 15px solid rgb(133, 131, 131);
     
 }
-body{
-    max-width: 1200px;
-    margin: 0 auto;
-}
 p{
     font-family: "SegoeUI";
     text-align:justify;
@@ -51,8 +47,20 @@ h1,h5,.h1{
     background-color: rgb(236,236,236) ;
 
 }
+#choixProduit .divImage{
+    border: 2px solid rgb(173, 166, 166);
+}
 h3{
     margin:0;
     padding: 0;
     font-family: "Antipasto"; 
+    border-bottom: 2px solid rgb(173, 166, 166);
+}
+.divImage{
+    width: 22%;
+    background-color: rgb(236,236,236);
+}
+.divImage img{
+    padding: 10px;
+    width: 100%;
 }
