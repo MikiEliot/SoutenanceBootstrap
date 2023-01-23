@@ -71,6 +71,10 @@ h1,h5,.h1{
     background-size:cover;
     
 }
+.fermerParX{
+    border:none;
+    background: none;
+}
 .cliquerIci{
     color: white;
     background: none;
@@ -149,8 +153,7 @@ h1,h5,.h1{
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    height: 400px;
-    width: 80%;
+    width: 40%;
      /* Could be more or less, depending on screen size */
   }
   
@@ -170,7 +173,7 @@ h1,h5,.h1{
   }
  
   .articlesEnBas{
-    background-color: #ddd;
-    border: 1px solid gray;
+    background-color: rgb(255, 251, 251);
+    border: 3px solid rgb(177, 171, 171);
     padding: 10px;
   }

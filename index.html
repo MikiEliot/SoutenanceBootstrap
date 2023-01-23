@@ -36,7 +36,7 @@
 <body class="container">
 
 
-    <!-- -----------------------------------------------HEADER------------------------------------------------------- -->
+    <!-------------------------------------------------HEADER------------------------------------------------------- -->
 
 
     <header class="container">
@@ -74,16 +74,17 @@
                     <li class="col-lg-2 nav-item text-sm-center"><a class="text-decoration-none text-reset nav-link"
                             href=#>06. CONTACT</a></li>
                 </ol>
+            </div>
         </nav>
     </header>
 
 
-    <!-- --------------------     MAIN     ----------------------------------------------------- -->
+    <!----------------------     MAIN     ----------------------------------------------------- -->
 
 
     <main>
 
-        <!-- -----------------------------------Slider ------------------------------------------ -->
+        <!-------------------------------------Slider ------------------------------------------ -->
 
         <div id="carouselExampleCaptions" class="carousel slide d-lg-block d-sm-none" data-ride="carousel">
             <div class="carousel-inner d-inline-block ">
@@ -158,27 +159,30 @@
         </section>
 
         <!-- Section avec Trois divs ou le premier est fait de deux articles DOM -->
-
+        <div class="row">
+            <hr class="col ligneSeparateur">
+            <p class="text-center col pt-2">Derniéres&nbsp;News</p>
+            <hr class="col ligneSeparateur">
+        </div>
         <section class="row w-100 m-0 p-0">
             <section class="col-lg col-md-12 col-sm-12">
-                <div class="row">
-                    <hr class="col ligneSeparateur">
-                    <p class="text-center col pt-2">Derniéres&nbsp;News</p>
-                    <hr class="col ligneSeparateur">
-                </div>
+                
 
                 <!-- ------------Article 1 avec boite modal--------------------- -->
 
                 <article class="articlesEnBas">
                     <p id="dateArticle1"></p>
-                    <p id="titreArticle1"></p>
+                    <h3 id="titreArticle1"></h3>
+                    <p id="texteArticle1"></p>
                     <button id="myBtn">+ D'INFOS</button>
                     <div id="myModal" class="modal">
                         <div class="modal-content">
                             <span class="close">&times;</span>
+                            <figure>
+                            <h3 id="titreBoiteModalUn"></h3>
                             <p id="texteArticleUn"></p>
-                            <img id="modalImageDeux"
-                                alt="">
+                            <img id="modalImage" src="" alt="">
+                            </figure>
                         </div>
                     </div>
                 </article>
@@ -190,15 +194,19 @@
                 <article class="articlesEnBas">
                     <p id="dateArticle2"></p>
                     <h3 id="titreArticle2"></h3>
+                    <p id="texteArticle2"></p>
                     <button id="myBtnDeux">+ D'INFOS</button>
                     <div id="myModalDeux" class="modal">
                         <div class="modal-content">
                             <span class="close">&times;</span>
-                            <div></div>
+                            <figure>
+                            <h3 id="titreBoiteModalDeux"></h3>
                             <p id="texteArticleDeux"></p>
-                            <img id="modalImageDeux" 
-                                alt="">
+                            <img id="modalImageDeux" src="" alt="">
+                            </figure>
+                                
                         </div>
+                    </div>
                 </article>
             </section>
 
@@ -210,9 +218,9 @@
                 <p>Découvrez notre sélection de meubles
                     conteporains et de mobiliser moderne et design pour aménager votre intérieur.
                     Plus de 10,000 objets deco et design en vente.</p>
-                <p>Préparez vos cadeaux et vous faire plaisir avec des milliers de produits disponibles et livrés
+                <p>>Préparez vos cadeaux et vous faire plaisir avec des milliers de produits disponibles et livrés
                     chez vous en 24/48!</p>
-                <p>Noél 2021 est déja là! Célébrez un Noél design avec notre sélection d'idées de cadeaux originales
+                <p>>Noél 2021 est déja là! Célébrez un Noél design avec notre sélection d'idées de cadeaux originales
                     et insolites.
                     Découvrez notre sélection d'objets ludiques et insolites et faites le plein d'idées!
                 </p>
@@ -233,10 +241,10 @@
                             </h3>
                             <hr>
 
-                            <label for="email" class="ml-2"><b>Adresse Email</b></label>
-                            <input type="email" placeholder="Votre Email" name="email" required>
+                            <label for="email" class="ml-2"><b>Adresse Email</b></label><br>
+                            <input type="email" class="ml-2" placeholder="Votre Email" name="email" required>
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="exampleCheck1">
+                                <input type="checkbox" class="form-check-input" name="exampleCheck1">
                                 <label for="exampleCheck1">
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1"
                                         name="exampleCheck1">

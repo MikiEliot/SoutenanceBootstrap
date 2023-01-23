@@ -29,7 +29,11 @@ window.onload = function () {
         if (event.target == modal) {
             modal.style.display = "none";
         }
+        if (event.target == modalDeux){
+            modalDeux.style.display = "none"
+        }
     }
+    
 
     // function get_random qui retourn un numero aleatoire d'une liste
 
@@ -37,15 +41,27 @@ window.onload = function () {
         return list[Math.floor((Math.random() * list.length))];
     }
 
-    // declarations des variables 
-
+    // declarations des variables article 1 avec boite modale 1
+    const texteArticle1 = document.getElementById('texteArticle1')
     const dateArticle1 = document.getElementById('dateArticle1')
     const titreArticle1 = document.getElementById('titreArticle1')
-    const dateArticle2 = document.getElementById('dateArticle2')
-    const titreArticle2 = document.getElementById('titreArticle2')
+    const titreBoiteModalUn = document.getElementById('titreBoiteModalUn')
     const texteArticleUn = document.getElementById('texteArticleUn')
+    const modalImage=document.getElementById('modalImage')
+
+
+
+    // declarations des variables article 2 avec boite modale 2
+
+
+    const dateArticle2 = document.getElementById('dateArticle2')
+    const texteArticle2 = document.getElementById('texteArticle2')
+    const titreArticle2 = document.getElementById('titreArticle2')
     const texteArticleDeux = document.getElementById('texteArticleDeux')
     const modalImageDeux = document.getElementById('modalImageDeux')
+    const titreBoiteModalDeux = document.getElementById('titreBoiteModalDeux')
+
+    // declaration de la liste et la variable choix 
     let liste = [1, 2, 3]
     let choix = get_random(liste)
 
@@ -59,14 +75,22 @@ window.onload = function () {
                     Object.values(data.date).forEach(element => {
                         dateArticle1.innerHTML += element + ' '
                     });
-                    texteArticleUn.innerHTML=data.content[0]
                     titreArticle1.innerHTML = data.title
-                    titreArticle1.innerHTML += data.content[0].slice(0,60)
+                    texteArticle1.innerHTML = (data.content[choix]).slice(0,90)
+                    console.log(typeof (choix))
+                    console.log(choix)
+                    titreBoiteModalUn.innerHTML = data.title
+                    texteArticleUn.innerHTML=data.content
+                    modalImage.src=data.picture
+                    console.log(typeof (choix))
+                    console.log(choix)
+                
                 })
             } else {
                 console.log("ERREUR")
             }
         })
+        choix=get_random(liste)
 
         fetch('https://www.tbads.eu/greta/kercode/ajax/?article=' + choix)
         .then(res => {
@@ -75,9 +99,13 @@ window.onload = function () {
                     Object.values(data.date).forEach(element => {
                         dateArticle2.innerHTML += element + ' '
                     });
-                    texteArticleDeux.innerHtml = data.content[0]
-                    console.log(texteArticleDeux)
-                    titreArticle2.innerHTML = data.title
+                    titreArticle2.innerHTML=data.title
+                    texteArticle2.innerHTML = (data.content[choix]).slice(0,90)
+                    titreBoiteModalDeux.innerHTML = data.title
+                    texteArticleDeux.innerHTML=data.content
+                    console.log(typeof (choix))
+                    console.log(choix)
+                    modalImageDeux.src=data.picture
                 })
             } else {
                 console.log("ERREUR")
