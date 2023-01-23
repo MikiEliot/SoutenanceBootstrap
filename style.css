@@ -1,3 +1,5 @@
+/* définition  des fonts */
+
 @font-face {
     font-family: "Antipasto";
     src: url(/fonts/Antipasto-Pro-Regular-trial.ttf);
@@ -25,12 +27,12 @@ h1,h5,.h1{
     
     
 }
+
+/* Styles de navbar */
+
 .navigation{
     border: 4px solid rgb(236,236,236);
     background-color: rgb(248,248,248);
-}
-.navigation ol{
-    list-style-type: decimal-leading-zero;
 }
 
 .navigation li{
@@ -53,7 +55,7 @@ h1,h5,.h1{
 #choixProduit h3{
     margin:0;
     padding: 0;
-    font-family: "Antipasto"; 
+    font-family: "SegoeUI"; 
     border-bottom: 2px solid rgb(173, 166, 166);
 }
 .divImage{
@@ -66,15 +68,17 @@ h1,h5,.h1{
 #divButtonCliqueIci{
     background: url(/images/fond-book.png);
     background-repeat: no-repeat;
+    background-size:cover;
     
 }
 .cliquerIci{
     color: white;
     background: none;
     border: none;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
+    margin-top: 4rem;
 }  
-  /* The popup form - hidden by default */
+  /* Le form popup - cache par default */
   .form-popup {
     display: none;
     position:fixed;
@@ -85,14 +89,14 @@ h1,h5,.h1{
     z-index: 1;
 }
   
-  /* Add styles to the form container */
+  /* styles de form container */
   .form-container {
     margin: 0 auto;
     width: 400px;
     background-color: rgba(255, 255, 255);
   }
   
-  /* Full-width input fields */
+  /* Champ d'input largeur maximale */
   .form-container input[type=text], .form-container input[type=password] {
     width: 100%;
     padding: 15px;
@@ -101,20 +105,19 @@ h1,h5,.h1{
     background: #f1f1f1;
   }
   
-  /* When the inputs get focus, do something */
+  /* Faire qqch on focus */
   .form-container input[type=text]:focus, .form-container input[type=password]:focus {
     background-color: #ddd;
     outline: none;
   }
   
-  /* Add a red background color to the cancel button */
   .form-container .cancel {
     color: white;
     background-color: red;
     justify-content: right ;
   }
   
-  /* Add some hover effects to buttons */
+  /* Effects hover au bouttons */
   .form-container .btn:hover, .open-button:hover {
     opacity: 1;
   }
@@ -127,8 +130,47 @@ h1,h5,.h1{
     flex-direction: row-reverse;
   }
 
-  .fermerParX{
-    color: gray;
-    border: none;
-    background: none;
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    height: 400px;
+    width: 80%;
+     /* Could be more or less, depending on screen size */
+  }
+  
+  /* Boutton close */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+ 
+  .articlesEnBas{
+    background-color: #ddd;
+    border: 1px solid gray;
+    padding: 10px;
   }
