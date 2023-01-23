@@ -39,7 +39,7 @@
     <!-------------------------------------------------HEADER------------------------------------------------------- -->
 
 
-    <header class="container">
+    <header class="container px-0">
         <div class="row mb-5 mt-3 justify-content-center">
             <p class="px-2 pt-lg-5 text-center col-lg-3 col-sm-12  text-sm-center text-lg-right ">Magazine En Ligne</p>
             <h1 class="col-lg-2 pt-lg-3 text-center col-12 col-sm-12  mw-100 text-sm-center ">INTERIORS</h1>
@@ -60,18 +60,18 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ol class="row m-lg-2  navbar-nav w-100 text-lg-left">
-                    <li class="col-lg-2 nav-item mt-2 pl-2 text-sm-center"><a class="text-decoration-none text-reset"
+                <ol class="row navbar-nav w-100 mx-auto">
+                    <li class="col-lg-2 nav-item"><a class="text-decoration-none text-reset nav-link"
                             href="index.html">01. ACCUEIL</a></li>
-                    <li class="col-lg-2 nav-item text-sm-center"><a class="text-decoration-none text-reset nav-link"
-                            href=#>02. A&nbsp;PROPOS</a></li>
-                    <li class="col-lg-2 nav-item text-sm-center"><a class="text-decoration-none text-reset nav-link"
+                    <li class="col-lg-2 nav-item "><a class="text-decoration-none text-reset nav-link"
+                            href=#>02.&nbsp;A&nbsp;PROPOS</a></li>
+                    <li class="col-lg-2 nav-item "><a class="text-decoration-none text-reset nav-link"
                             href=#>03. SERVICES</a></li>
-                    <li class="col-lg-2 nav-item text-sm-center"><a class="text-decoration-none text-reset nav-link"
+                    <li class="col-lg-2 nav-item"><a class="text-decoration-none text-reset nav-link"
                             href=#>04. GALERIE</a></li>
-                    <li class="col-lg-2 nav-item text-sm-center"><a class="text-decoration-none text-reset nav-link"
+                    <li class="col-lg-2 nav-item"><a class="text-decoration-none text-reset nav-link"
                             href=#>05. LES&nbsp;NEWS</a></li>
-                    <li class="col-lg-2 nav-item text-sm-center"><a class="text-decoration-none text-reset nav-link"
+                    <li class="col-lg-2 nav-item"><a class="text-decoration-none text-reset nav-link"
                             href=#>06. CONTACT</a></li>
                 </ol>
             </div>
@@ -86,27 +86,27 @@
 
         <!-------------------------------------Slider ------------------------------------------ -->
 
-        <div id="carouselExampleCaptions" class="carousel slide d-lg-block d-sm-none" data-ride="carousel">
+        <div id="carouselExampleCaptions" class="carousel slide d-sm-none d-md-none d-lg-block" data-ride="carousel">
             <div class="carousel-inner d-inline-block ">
                 <div class="carousel-item active">
-                    <img src="images/chambre-blanche.jpg" class="d-block w-100" alt="...">
+                    <img src="images/chambre-blanche.jpg" class="d-block w-100" alt="chambre blanche">
                     <div class="carousel-caption d-none d-md-block">
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="images/chambre-rose.jpg" class="d-block w-100" alt="...">
+                    <img src="images/chambre-rose.jpg" class="d-block w-100" alt="chambre rose">
                     <div class="carousel-caption d-none d-md-block">
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="images/chaises.jpg" class="d-block w-100" alt="...">
+                    <img src="images/chaises.jpg" class="d-block w-100" alt="chaises">
                     <div class="carousel-caption d-none d-md-block">
                     </div>
-
                 </div>
                 <div class="carousel-caption carousel-text">
                     <p class="text-center">POUR TROUVER <span class="h1">LES MEILLEURES</span> SOLUTIONS</p>
                 </div>
+                
             </div>
             <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -127,30 +127,30 @@
         </div>
 
 
-        <!-- Section -Nouvelle collection- avec quatre images  -->
+        <!-- Section -Nouvelle collection- avec quatre images d-flex when large, d-inline-block medium, d-block -->
 
         <section id="choixProduit">
-            <div class="row">
-                <div class="divImage col-lg-3 col-md-6 col-sm-12 mb-3">
-                    <h3 class="text-lg-center ">CHAMBRES</h3>
+            <div class="d-lg-flex justify-content-around">
+                <div class="divImage  d-md-inline-block d-sm-inline-block d-sm-block mb-3 mx-auto ">
+                    <h3 class="text-center"><a href="#" class="text-decoration-none text-reset">CHAMBRES</a></h3>
                     <div>
                         <img src="images/vignette-chambre.jpg" alt="chambre">
                     </div>
                 </div>
-                <div class="divImage col-lg-3 col-md-6 col-sm-12 mb-3">
-                    <h3 class="text-lg-center">CUISINES</h3>
+                <div class="divImage d-md-inline-block d-sm-inline-block d-sm-block mb-3 mx-auto float-md-right ">
+                    <h3 class="text-center"><a href="#" class="text-decoration-none text-reset">CUISINES</a></h3>
                     <div>
                         <img src="images/vignette-cuisine.jpg" alt="cuisine">
                     </div>
                 </div>
-                <div class="divImage col-lg-3 col-md-6 col-sm-12 mb-3">
-                    <h3 class="text-lg-center">SALONS</h3>
+                <div class="divImage  d-md-inline-block d-sm-inline-block d-sm-block mb-3 mx-auto ">
+                    <h3 class="text-center"><a href="#" class="text-decoration-none text-reset">SALONS</a></h3>
                     <div>
                         <img src="images/vignette-fauteuil.jpg" alt="fauteill">
                     </div>
                 </div>
-                <div class="divImage col-lg-3 col-md-6 col-sm-12 mb-3 ">
-                    <h3 class="text-lg-center">BAINS</h3>
+                <div class="divImage d-md-inline-block d-sm-inline-block d-sm-block mb-3 mx-auto float-md-right ">
+                    <h3 class="text-center"><a href="#" class="text-decoration-none text-reset">BAINS</a></h3>
                     <div>
                         <img src="images/vignette-sallebain.jpg" alt="bains">
                     </div>
@@ -181,7 +181,7 @@
                             <figure>
                             <h3 id="titreBoiteModalUn"></h3>
                             <p id="texteArticleUn"></p>
-                            <img id="modalImage" src="" alt="">
+                            <img id="modalImage"class="w-100" src="" alt="#">
                             </figure>
                         </div>
                     </div>
@@ -202,7 +202,7 @@
                             <figure>
                             <h3 id="titreBoiteModalDeux"></h3>
                             <p id="texteArticleDeux"></p>
-                            <img id="modalImageDeux" src="" alt="">
+                            <img id="modalImageDeux" class="w-100" src="" alt="#">
                             </figure>
                                 
                         </div>
@@ -224,13 +224,13 @@
                     et insolites.
                     Découvrez notre sélection d'objets ludiques et insolites et faites le plein d'idées!
                 </p>
-                <button>+ D'INFOS</button>
+                <button id="buttonBasInfos">+ D'INFOS</button>
 
             </div>
 
             <!-- Troisiéme div avec le bouton subscription et liens  -->
 
-            <div class="col-lg-4 col-md-6 col-sm-12 m-0">
+            <div class="col-lg-4 col-md-6 col-sm-6 m-0">
                 <div id="divButtonCliqueIci">
                     <h4 class="mb-5 p-1">RESERVEZ <br>NOTRE <br>CATALOGUE</h4>
                     <button class=" pb-5 ml-4 cliquerIci open-button" onclick="openForm()">Cliquer
@@ -286,19 +286,18 @@
     <footer class="container mt-4">
         <div class="row">
             <!-- trois lien avec logos -->
-            <div class="col-lg-6 col-md-12 col-sm-12">
-                <ul class="d-flex list-unstyled w-25">
+            <div class="col-lg-6 col-md-12 col-sm-12 text-center text-sm-center">
+                <ul class="d-flex list-unstyled w-25 mx-auto">
                     <li class="m-2"><a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a></li>
                     <li class="m-2"><a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a></li>
-                    <li class="m-2"><a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a></li>
-
+                    <li class="m-2"><a href="https://instagram.com"><i class="fa-brands fa-pinterest"></i></a></li>
                 </ul>
             </div>
 
             <!-- Copyrights -->
 
             <div class="col-lg-6 col-md-12 col-sm-12 ">
-                <p class="text-lg-right text-center">GBS - INTERIORS 2023</p>
+                <p class="text-lg-right text-center">© GBS - INTERIORS 2023</p>
             </div>
         </div>
     </footer>

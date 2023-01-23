@@ -10,6 +10,7 @@ window.onload = function () {
     const btnDeux = document.getElementById("myBtnDeux")
     const btn = document.getElementById("myBtn")
     const span = document.getElementsByClassName("close")[0]
+    const spanDeux = document.getElementsByClassName("close")[1]
 
     //Définition des fonction avec .onclick
 
@@ -21,6 +22,9 @@ window.onload = function () {
     }
     span.onclick = function () {
         modal.style.display = "none";
+
+    }
+    spanDeux.onclick = function () {
         modalDeux.style.display = "none";
 
     }
@@ -77,13 +81,9 @@ window.onload = function () {
                     });
                     titreArticle1.innerHTML = data.title
                     texteArticle1.innerHTML = (data.content[choix]).slice(0,90)
-                    console.log(typeof (choix))
-                    console.log(choix)
                     titreBoiteModalUn.innerHTML = data.title
                     texteArticleUn.innerHTML=data.content
                     modalImage.src=data.picture
-                    console.log(typeof (choix))
-                    console.log(choix)
                 
                 })
             } else {
@@ -103,8 +103,6 @@ window.onload = function () {
                     texteArticle2.innerHTML = (data.content[choix]).slice(0,90)
                     titreBoiteModalDeux.innerHTML = data.title
                     texteArticleDeux.innerHTML=data.content
-                    console.log(typeof (choix))
-                    console.log(choix)
                     modalImageDeux.src=data.picture
                 })
             } else {
