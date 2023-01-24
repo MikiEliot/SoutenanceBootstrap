@@ -52,6 +52,7 @@ window.onload = function () {
     const titreBoiteModalUn = document.getElementById('titreBoiteModalUn')
     const texteArticleUn = document.getElementById('texteArticleUn')
     const modalImage=document.getElementById('modalImage')
+    const auteur1 = document.getElementById('auteur1')
 
 
 
@@ -64,6 +65,7 @@ window.onload = function () {
     const texteArticleDeux = document.getElementById('texteArticleDeux')
     const modalImageDeux = document.getElementById('modalImageDeux')
     const titreBoiteModalDeux = document.getElementById('titreBoiteModalDeux')
+    const auteur2 = document.getElementById('auteur2')
 
     // declaration de la liste et la variable choix 
     let liste = [1, 2, 3]
@@ -84,6 +86,7 @@ window.onload = function () {
                     titreBoiteModalUn.innerHTML = data.title
                     texteArticleUn.innerHTML=data.content
                     modalImage.src=data.picture
+                    auteur1.innerHTML = data.author['name'] + ' ' + data.author['surname'] + ' ' + data.author['position']
                 
                 })
             } else {
@@ -104,6 +107,7 @@ window.onload = function () {
                     titreBoiteModalDeux.innerHTML = data.title
                     texteArticleDeux.innerHTML=data.content
                     modalImageDeux.src=data.picture
+                    auteur2.innerHTML = data.author['name'] + ' '+ data.author['surname'] + ' ' + data.author['position']
                 })
             } else {
                 console.log("ERREUR")
