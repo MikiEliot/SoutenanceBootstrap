@@ -1,129 +1,63 @@
-//.onload permet que le JS contenu s'affiche en méme temps avec la page html
+ // function get_randomm qui retourne un numero aleatoire d'une liste
 
-window.onload = function () {
+ function get_random(list) {
+    return list[Math.floor((Math.random() * list.length))];
+}
+// declaration de la liste et la variable choix 
+let liste = [1, 2, 3]
+let choix = get_random(liste)
 
-
-    // declarations des variables 
-
-    const modal = document.getElementById("myModal")
-    const modalDeux = document.getElementById("myModalDeux")
-    const btnDeux = document.getElementById("myBtnDeux")
-    const btn = document.getElementById("myBtn")
-    const span = document.getElementsByClassName("close")[0]
-    const spanDeux = document.getElementsByClassName("close")[1]
-
-    //Définition des fonction avec .onclick
-
-    btnDeux.onclick = function () {
-        modalDeux.style.display = "block";
-    }
-    btn.onclick = function () {
-        modal.style.display = "block";
-    }
-    span.onclick = function () {
-        modal.style.display = "none";
-
-    }
-    spanDeux.onclick = function () {
-        modalDeux.style.display = "none";
-
-    }
-    
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-        if (event.target == modalDeux){
-            modalDeux.style.display = "none"
-        }
-    }
-    
-
-    // function get_random qui retourn un numero aleatoire d'une liste
-
-    function get_random(list) {
-        return list[Math.floor((Math.random() * list.length))];
-    }
-
-    // declarations des variables article 1 avec boite modale 1
-    const texteArticle1 = document.getElementById('texteArticle1')
-    const dateArticle1 = document.getElementById('dateArticle1')
-    const titreArticle1 = document.getElementById('titreArticle1')
-    const titreBoiteModalUn = document.getElementById('titreBoiteModalUn')
-    const texteArticleUn = document.getElementById('texteArticleUn')
-    const modalImage=document.getElementById('modalImage')
-    const auteur1 = document.getElementById('auteur1')
-
-
-
-    // declarations des variables article 2 avec boite modale 2
-
-
-    const dateArticle2 = document.getElementById('dateArticle2')
-    const texteArticle2 = document.getElementById('texteArticle2')
-    const titreArticle2 = document.getElementById('titreArticle2')
-    const texteArticleDeux = document.getElementById('texteArticleDeux')
-    const modalImageDeux = document.getElementById('modalImageDeux')
-    const titreBoiteModalDeux = document.getElementById('titreBoiteModalDeux')
-    const auteur2 = document.getElementById('auteur2')
-
-    // declaration de la liste et la variable choix 
-    let liste = [1, 2, 3]
-    let choix = get_random(liste)
-
-
-    // utilisation du methode fetch pour recuperer les articles
-
+// utilisation du methode fetch pour recuperer les articles
+for (let i = 0; i < 2; i++) {
     fetch('https://www.tbads.eu/greta/kercode/ajax/?article=' + choix)
         .then(res => {
             if (res.ok) {
                 res.json().then(data => {
-                    Object.values(data.date).forEach(element => {
-                        dateArticle1.innerHTML += element + ' '
-                    });
-                    titreArticle1.innerHTML = data.title
-                    texteArticle1.innerHTML = (data.content[choix]).slice(0,90)
-                    titreBoiteModalUn.innerHTML = data.title
-                    texteArticleUn.innerHTML=data.content
-                    modalImage.src=data.picture
-                    auteur1.innerHTML = data.author['name'] + ' ' + data.author['surname'] + ' ' + data.author['position']
-                
-                })
-            } else {
-                console.log("ERREUR")
-            }
-        })
-        choix=get_random(liste)
 
-        fetch('https://www.tbads.eu/greta/kercode/ajax/?article=' + choix)
-        .then(res => {
-            if (res.ok) {
-                res.json().then(data => {
-                    Object.values(data.date).forEach(element => {
-                        dateArticle2.innerHTML += element + ' '
+                    // les variable des deux articles 
+
+                    let contenuArticle= document.getElementById("contenuArticle" + i);
+                    let dateArticle = document.createElement('p');
+                    
+                    let descriptionArticle = document.createElement('p');
+                    dateArticle.innerHTML = data.date['day'] + " " + data.date['month'] + " " + data.date['year'];
+        
+                    descriptionArticle = data.content[0].slice(0, 90);
+                    contenuArticle.append(dateArticle, descriptionArticle)
+
+                    //les variables des deux boites modales
+                    let modalHeader = document.getElementById('modal-header'+i);
+                    let modalBody = document.getElementById('modal-body'+i);
+                    let modalFooter = document.getElementById('modal-footer'+i);
+                    let modalImage = document.createElement('img');
+                    modalImage.style['width'] = '100%';
+                    
+                    modalHeader.innerHTML = data.title;
+                    Object.values(data.content).forEach(element => {
+                        let nouveauParagraphe = document.createElement('p')
+                        nouveauParagraphe.innerHTML = ">" + element;
+                        modalBody.appendChild(nouveauParagraphe);
                     });
-                    titreArticle2.innerHTML=data.title
-                    texteArticle2.innerHTML = (data.content[choix]).slice(0,90)
-                    titreBoiteModalDeux.innerHTML = data.title
-                    texteArticleDeux.innerHTML=data.content
-                    modalImageDeux.src=data.picture
-                    auteur2.innerHTML = data.author['name'] + ' '+ data.author['surname'] + ' ' + data.author['position']
+                    modalFooter.innerHTML=data.author['name'] + ' ' + data.author['surname'] + ' ' + data.author['position'];
+                    modalBody.appendChild(modalImage);
+                    modalImage.src=data.picture;
                 })
             } else {
                 console.log("ERREUR")
             }
         })
 
+    //supprimer l'element de la liste déja utilisé
+
+    liste.splice(liste.indexOf(choix),1);
+    choix = get_random(liste)
 }
+
 
 //    Les fonctions qui ouvre et ferme un formulaire
-
-
 function openForm() {
-    document.getElementById("myForm").style.display = "block";
+document.getElementById("myForm").style.display = "block";
 }
-
 function closeForm() {
-    document.getElementById("myForm").style.display = "none";
+document.getElementById("myForm").style.display = "none";
 }
-
